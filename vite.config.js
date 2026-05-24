@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import Sitemap from 'vite-plugin-sitemap'
 import tailwindcss from '@tailwindcss/vite'
 import svgLoader from 'vite-svg-loader'
 import path from 'path'
@@ -18,6 +19,10 @@ export default defineConfig(({ mode }) => {
       vue(),
       tailwindcss(),
       svgLoader(),
+      Sitemap({
+        hostname: 'https://sally.kz',
+        outDir: 'docs',
+      }),
     ],
 
     resolve: {
